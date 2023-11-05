@@ -1,7 +1,7 @@
 "RelaxNG validation of XML documents."
 
 from ctypes import *
-import os, re, threading, collections
+import os, threading, collections
 
 __all__ = ["Error", "SchemaError", "XMLError", "Message", "Schema"]
 
