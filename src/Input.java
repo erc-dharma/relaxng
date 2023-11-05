@@ -12,8 +12,8 @@ public class Input extends InputStream {
 
 	private int validInfo = 0;
 	private static final int BYTE_OFF = 1 << 0;
-	private static final int LINE_NO = 1 << 0;
-	private static final int COLUMN_NO = 1 << 1;
+	private static final int LINE_NO = 1 << 1;
+	private static final int COLUMN_NO = 1 << 2;
 
 	private static final byte[] charLen = new byte[]{
 		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
