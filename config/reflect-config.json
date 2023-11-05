@@ -8,7 +8,47 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
+  "name":"com.thaiopensource.validate.auto.SchemaReaderLoaderSchemaReceiverFactory",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.thaiopensource.validate.jarv.JarvSchemaReaderFactory"
+},
+{
+  "name":"com.thaiopensource.validate.mns.MnsSchemaReceiverFactory",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.thaiopensource.validate.nrl.NrlSchemaReceiverFactory",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.thaiopensource.validate.nvdl.NvdlSchemaReceiverFactory",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.thaiopensource.validate.picl.PiclSchemaReceiverFactory",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"com.thaiopensource.validate.rng.SAXSchemaReceiverFactory",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.thaiopensource.validate.schematron.NewSaxonSchemaReaderFactory"
+},
+{
+  "name":"com.thaiopensource.validate.schematron.OldSaxonSchemaReaderFactory"
+},
+{
+  "name":"com.thaiopensource.validate.schematron.SchematronSchemaReaderFactory",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.thaiopensource.validate.schematron.XalanSchemaReaderFactory"
+},
+{
+  "name":"com.thaiopensource.validate.xerces.XsdSchemaReaderFactory",
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {

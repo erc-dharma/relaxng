@@ -11,3 +11,5 @@ validate rng test/bad_xml.xml
 unload rnc
 load bad test/bad_schema.rng 0
 load bad test/bad_schema.rnc 1
+load bad test/inscription.xml 0
+load bad test/inscription.xml 1

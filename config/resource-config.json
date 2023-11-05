@@ -3,6 +3,8 @@
   "includes":[{
     "pattern":"\\QMETA-INF/services/com.thaiopensource.datatype.xsd.regex.RegexEngine\\E"
   }, {
+    "pattern":"\\QMETA-INF/services/com.thaiopensource.validate.SchemaReaderFactory\\E"
+  }, {
     "pattern":"\\QMETA-INF/services/com.thaiopensource.validate.auto.SchemaReceiverFactory\\E"
   }, {
     "pattern":"\\QMETA-INF/services/java.time.zone.ZoneRulesProvider\\E"
@@ -23,6 +25,9 @@
     "locales":[""]
   }, {
     "name":"com.thaiopensource.relaxng.pattern.resources.Messages",
+    "locales":[""]
+  }, {
+    "name":"com.thaiopensource.validate.auto.resources.Messages",
     "locales":[""]
   }, {
     "name":"org.apache.xerces.impl.msg.XMLMessages",
