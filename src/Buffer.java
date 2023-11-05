@@ -78,14 +78,12 @@ public class Buffer extends OutputStream {
 		finished = true;
 		if (overflowed) {
 			addTrailingRecord();
-		} else {
-			int len = data.position();
-			if (len > 0) {
-				// Cut the trailing new line
-				data.position(data.position() - 1);
-			}
 		}
 		int len = data.position();
+		if (len > 0) {
+			// Cut the trailing new line
+			data.position(--len);
+		}
 		data.put(len, (byte)'\0');
 		return len;
 	}
