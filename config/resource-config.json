@@ -1,0 +1,31 @@
+{
+  "resources":{
+  "includes":[{
+    "pattern":"\\QMETA-INF/services/com.thaiopensource.datatype.xsd.regex.RegexEngine\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/com.thaiopensource.validate.auto.SchemaReceiverFactory\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/java.time.zone.ZoneRulesProvider\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/java.util.spi.ResourceBundleControlProvider\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/javax.xml.parsers.SAXParserFactory\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.apache.xerces.xni.parser.XMLParserConfiguration\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.relaxng.datatype.DatatypeLibraryFactory\\E"
+  }]},
+  "bundles":[{
+    "name":"com.thaiopensource.datatype.xsd.resources.Messages",
+    "locales":[""]
+  }, {
+    "name":"com.thaiopensource.relaxng.parse.compact.resources.Messages",
+    "locales":[""]
+  }, {
+    "name":"com.thaiopensource.relaxng.pattern.resources.Messages",
+    "locales":[""]
+  }, {
+    "name":"org.apache.xerces.impl.msg.XMLMessages",
+    "locales":[""]
+  }]
+}

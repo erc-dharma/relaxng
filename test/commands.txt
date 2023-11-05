@@ -1,0 +1,13 @@
+load rng test/inscription.rng 0
+load rnc test/inscription.rnc 1
+validate rng test/bad_xml.xml
+validate rnc test/bad_xml.xml
+validate rng test/bad_structure.xml
+validate rnc test/bad_structure.xml
+validate rng test/inexisting.xml
+validate rnc test/inexisting.xml
+unload rng
+validate rng test/bad_xml.xml
+unload rnc
+load bad test/bad_schema.rng 0
+load bad test/bad_schema.rnc 1
