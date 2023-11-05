@@ -94,8 +94,8 @@ class Schema(object):
 
 		The schema can be in the XML format or in the compact format.
 		Per default, it is assumed to be in the XML format, unless
-		`schema` is a path and the file extension is `.rnc. Pass
-		True or False to `compact` to specify explicitly whether the
+		`schema` is a path and the file extension is `.rnc`. Pass
+		`True` or `False` to `compact` to specify explicitly whether the
 		file is in the compact format or not, respectively.
 		"""
 		self._name = c_char_p(str(id(self)).encode("UTF-8"))
@@ -136,8 +136,8 @@ class Schema(object):
 		* `byte_offset`: offset of the error within the validated file.
 		* `code_offset`: same as `byte_offset`, but counting in code points.
 		* `line`: number of the line where the error occurs, starting at 1.
-		  Lines are counted as in the XML specification: delimitors are \\n,
-		  \\r, and \\r\\n. The line break characters introduced
+		  Lines are counted as in the XML specification: delimitors are
+		  `\\n`, `\\r`, and `\\r\\n`. The line break characters introduced
 		  in Unicode, namely U+2028 and U+2029, are not counted as line
 		  breaks. But Python treats them as such in the function
 		  `str.splitlines()`, so you should be careful not to use it
@@ -146,6 +146,7 @@ class Schema(object):
 		  Code points do not necessary correspond to character units,
 		  but most tools  out there count columns in code points, so we do
 		  it too.
+		* `type`: error type, one of "warning", "error" or "fatal".
 		* `text`: error message.
 
 		The exact error location is not necessarily available. When
@@ -156,6 +157,12 @@ class Schema(object):
 		* `line` is valid but `column` is not. Other fields are valid.
 		* `line` and `column` are both invalid. In this case, `byte_offset`
 		   and `code_offset` are invalid, too.
+
+		When the error location is available, it points right after the
+		part of the document that generated the error.
+
+		Not all errors might be reported if there are too many.
+		In this case, the last error message will say so.
 		"""
 		ret, text = _common_call(_lib.relaxng_validate, self._name, xml)
 		if ret < 0:
@@ -203,7 +210,7 @@ if __name__ == "__main__":
 			errs = schema(file)
 			print_recs(file, errs)
 		except XMLError as e:
-			print_recs(file, [Message(text=str(e))])
+			print_recs(file, [Message(-1, -1, -1, -1, "fatal", str(e))])
 			ret = 1
 		except Error as e:
 			print("%s: %s" % (prog, e), file=sys.stderr)

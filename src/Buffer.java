@@ -58,11 +58,12 @@ public class Buffer extends OutputStream {
 
 	private void addTrailingRecord() {
 		int len = data.position();
-		while (len > 0 && data.get(--len) != '\n') {
-			;
+		while (len > 0 && data.get(len - 1) != '\n') {
+			len--;
 		}
+		data.position(len);
+		overflowed = false;
 		try {
-			overflowed = false;
 			write(more);
 		} catch (IOException e) {
 			System.err.printf("relaxng: internal error\n");
