@@ -208,7 +208,9 @@ if __name__ == "__main__":
 	for file in args.files:
 		try:
 			errs = schema(file)
-			print_recs(file, errs)
+			if errs:
+				ret = 1
+				print_recs(file, errs)
 		except XMLError as e:
 			print_recs(file, [Message(-1, -1, -1, -1, "fatal", str(e))])
 			ret = 1
