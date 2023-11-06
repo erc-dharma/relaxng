@@ -25,9 +25,10 @@ enumerated in `$PYTHONPATH` or in the calling code's directory. In practice,
 you only need the files `librelaxng.so` and `relaxng.py`.
 
 The shared library `librelaxng.so` is compiled for Linux x86_64. To use the
-code within another platform, it needs to be recompiled on this platform, and a
-few modifications need to be made to `relaxng.py` and to the `makefile` (the
-`.so` extension might need to be modified, in particular).
+code within another platform or with another version of glibc, it needs to be
+recompiled on this platform, and a few modifications need to be made to
+`relaxng.py` and to the `makefile` (the `.so` extension might need to be
+modified, in particular).
 
 To recompile it, first download GraalVM, version 21 or ulterior, from
 [here](https://www.graalvm.org/downloads), and unpack the archive. Say you
@@ -54,12 +55,14 @@ The script `relaxng.py` can be used directly for validating files:
 
 To do the same thing in Python:
 
-	import relaxng
+```python
+import relaxng
 
-	schema = relaxng.Schema("test/inscription.rng")
-	errors = schema("test/bad_structure.xml")
-	for err in errors:
-		print(f"{file}:{err.line}:{err.column}: {err.type}: {err.text}")
+schema = relaxng.Schema("test/inscription.rng")
+errors = schema("test/bad_structure.xml")
+for err in errors:
+	print(f"{file}:{err.line}:{err.column}: {err.type}: {err.text}")
+```
 
 ## API Reference
 
