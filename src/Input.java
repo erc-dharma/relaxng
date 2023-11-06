@@ -171,7 +171,7 @@ public class Input extends InputStream {
 
 	public int read() {
 		if (buf.remaining() > 0) {
-			return buf.get();
+			return buf.get() & 0xff;
 		}
 		return -1;
 	}
